@@ -4,7 +4,7 @@ use u6example;
 
 create table users
 (
-	UserId integer not null auto_increment primary key,
+    UserId integer not null auto_increment primary key,
     firstname varchar(25),
     surname varchar(25),
     addressline1 varchar(25),
@@ -20,7 +20,7 @@ create table users
 
 create table books
 (
-	BookId integer not null auto_increment primary key,
+    BookId integer not null auto_increment primary key,
     title varchar(25),
     author varchar(25),
     publisher varchar(25),
@@ -29,16 +29,16 @@ create table books
 
 create table loans
 (
-	LoanId integer not null auto_increment primary key,
+    LoanId integer not null auto_increment primary key,
     UserId int not null,
     BookId int not null,
-	DateOut datetime,
+    DateOut datetime,
     DateDue datetime,
     Returned bool,
     foreign key (UserId) references users(UserId)
     on update cascade
     on delete restrict,
-	foreign key (BookId) references books(BookId)
+    foreign key (BookId) references books(BookId)
     on update cascade
     on delete restrict
 );
