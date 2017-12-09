@@ -2,8 +2,6 @@
 var express = require('express');
 var app = express();
 
-
-
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
@@ -24,7 +22,7 @@ connection.end();
 
 
 //set which port our web server will run on
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 1337;
 
 //define static html directory
 app.use(express.static(__dirname + '/public'));
